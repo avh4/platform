@@ -15,7 +15,7 @@
       text-align: left;
       line-height: 16pt;
       max-width: 50em;
-      counter-reset: h1 1;
+      counter-reset: h1;
     }
     h1 {
       font-size: 18pt;
@@ -24,7 +24,8 @@
       margin-top: 25pt;
       margin-left: 10pt;
       margin-bottom: -2pt;
-      counter-reset: h2 1;
+      counter-reset: h2;
+      counter-increment: h1;
     }
     h1:before {
       content: counter(h1) ". ";
@@ -35,7 +36,8 @@
       line-height: 16pt;
       margin-top: 30pt;
       margin-left: 30pt;
-      counter-reset: h3 1;
+      counter-reset: h3;
+      counter-increment: h2;
     }
     h2:before {
       content: counter(h1) "." counter(h2) ". ";
@@ -45,6 +47,8 @@
       line-height: 16pt;
       margin-top: 16pt;
       margin-left: 50pt;
+      counter-reset: h4;
+      counter-increment: h3;
     }
     h3:before {
       content: counter(h1) "." counter(h2) "." counter(h3) ". ";
