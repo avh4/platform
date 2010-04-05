@@ -13,18 +13,6 @@ When /^I ask to see a formatted view of my document$/ do
   File.should exist @current_view
 end
 
-class Platform
-  def self.process_document(input, output)
-    require 'maruku'
-    engine = Maruku.new(File.read(input))
-    File.open(output, 'w') do |f|
-      f.write(File.read("steps/header.txt"))
-      f.write(engine.to_html)
-      f.write(File.read("steps/footer.txt"))
-    end
-  end
-end
-
 Then /^I should see a formatted view of "([^\"]*)"$/ do |doc|
   @current_view.should look_like "test_data/output/#{doc}.html"
 end
