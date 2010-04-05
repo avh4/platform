@@ -1,0 +1,5 @@
+task :default => :features
+
+task :features do
+  sh "cucumber documents.feature"
+end

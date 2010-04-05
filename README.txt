@@ -1,0 +1,1 @@
+In a terminal, go to this directory and run `rake`.
